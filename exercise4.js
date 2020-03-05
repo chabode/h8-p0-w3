@@ -60,24 +60,24 @@ function dataHandling2(input){
     
     var split2 = input[3].split("/")
     // dengan function .sort
-    var bulan = split2.sort(function(a,b) {return b-a})
-    console.log(bulan)
+    // var bulan = split2.sort(function(a,b) {return b-a})
+    // console.log(bulan)
     
     // untuk hasil menjadi number
-    // var result = []
-    // for (var i = 0 ; i < split2.length; i++){
-    //     result.push(+split2[i])
-    // }
-    // for (var i = 0 ; i < result.length; i++){
-    //     for (var j = 0 ; j < result.length; j++){
-    //         if (result[j] < result[j+1]){
-    //             var temp = result[j]
-    //             result[j] = result[j+1]
-    //             result[j+1] = temp
-    //         }
-    //     }
-    // }
-    // console.log(result)
+    var result = []
+    for (var i = 0 ; i < split2.length; i++){
+        result.push(Number(split2[i]))
+    }
+    for (var i = 0 ; i < result.length; i++){
+        for (var j = 0 ; j < result.length; j++){
+            if (result[j] < result[j+1]){
+                var temp = result[j]
+                result[j] = result[j+1]
+                result[j+1] = temp
+            }
+        }
+    }
+    console.log(result)
 
     // untuk hasil tetap menjadi string
     // for (var i = 0 ; i < split2.length; i++){
