@@ -1,28 +1,19 @@
 function groupAnimals(animals) {
-    // you can only write your code here!
-    for (var i = 0 ; i < animals.length; i++){
-        for (var j = 0 ; j < animals.length; j++){
-            if (animals[j] > animals[j+1]){
-                var temp = animals[j]
-                animals[j] = animals[j+1]
-                animals[j+1] = temp
+    var result = []
+    var alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    for (var i = 0; i < alphabet.length; i++){
+        var temp = []
+        // var flag = false
+        for (var j = 0; j < animals.length; j++){
+            if (alphabet[i] === animals[j][0]){
+                temp.push(animals[j])
             }
         }
-    }
-    var newArr = []
-    var newAnimals = []
-    for (var k = 0 ; k < animals.length-1; k++){
-        if(animals[k][0] === animals[k+1][0]){
-            newArr.push(animals[k],animals[k+1])
-        } else {
-            newAnimals.push(newArr)
-            // newArr = []
+        if (temp.length > 0){
+            result.push(temp)
         }
-        // console.log(newArr)
     }
-    console.log(newAnimals)
-    
-    return animals
+    return result
 }
 
 console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
